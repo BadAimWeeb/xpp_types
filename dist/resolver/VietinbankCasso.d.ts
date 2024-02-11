@@ -3,7 +3,7 @@ export default class VietinbankCasso extends Base<{
     account: string;
     timeout: number;
     secretKey: string;
-    listenPath: string;
+    listenPath?: string;
 }, {}, {}> {
     type: string;
     type1: string;
