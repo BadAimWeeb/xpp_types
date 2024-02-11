@@ -21,7 +21,7 @@
     "@types/ws": "^8.5.10"
   },
   "dependencies": {
-    "@badaimweeb/js-dtsocket": "^0.7.0",
+    "@badaimweeb/js-dtsocket": "^0.7.1",
     "@badaimweeb/js-protov2d": "^1.0.11",
     "cheerio": "^1.0.0-rc.12",
     "crc": "^4.3.2",
