@@ -10,6 +10,8 @@ export default abstract class Base<T, C, M> extends Base_base<C, M> {
     httpServer: Express;
     type: string;
     /** More specific type than {@link type} */
+    type1: string;
+    /** More specific type than {@link type1} */
     type2: string;
     name: string;
     code: string;

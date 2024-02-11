@@ -28,6 +28,7 @@ export default class GenericVNPhoneCard1 extends Base<{
 }> {
     type: string;
     type1: string;
+    type2: string;
     name: string;
     code: string;
     state: {
@@ -40,7 +41,6 @@ export default class GenericVNPhoneCard1 extends Base<{
         partnerKey: string;
     };
     checking: boolean;
-    failedCount: number;
     init(): Promise<void>;
     resolveHTTP(req: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["0"], res: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["1"]): void;
     generateMessage(appShort: string, appPaymentID: string, localID: string): Promise<string>;
