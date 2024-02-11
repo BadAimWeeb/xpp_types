@@ -21,12 +21,18 @@ export default class GenericVNPhoneCard1 extends Base<{
     partnerID: string;
     partnerKey: string;
 }, {
-    chargeFailed: (requestID: string, data: CallbackData) => void;
+    chargeFailedMessage: (requestID: string, data: CallbackData) => void;
 }, {
     originalValue: number;
     penalty: boolean;
 }> {
     type: string;
+    type1: string;
+    name: string;
+    code: string;
+    state: {
+        target: string;
+    };
     knownTransactions: Set<string>;
     readonly defaultDBValue: {
         target: string;
@@ -37,6 +43,7 @@ export default class GenericVNPhoneCard1 extends Base<{
     failedCount: number;
     init(): Promise<void>;
     resolveHTTP(req: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["0"], res: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["1"]): void;
+    generateMessage(appShort: string, appPaymentID: string, localID: string): Promise<string>;
     charge(message: string, telecom: string, value: number, code: string, serial: string): Promise<{
         id: string;
         amount: number;

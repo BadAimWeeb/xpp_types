@@ -9,7 +9,12 @@ export default class TSRWallet extends Base<{
 }> {
     #private;
     type: string;
-    private _username;
+    type1: string;
+    name: string;
+    codename: string;
+    state: {
+        username: string;
+    };
     createPaymentInstruction(appShort: string, appPaymentID: string, localID: string, amount: number): {
         account: string;
         amount: number;

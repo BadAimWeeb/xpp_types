@@ -9,6 +9,12 @@ export default abstract class Base<T, C, M> extends Base_base<C, M> {
     resolverDB: ResolverDB<T>;
     httpServer: Express;
     type: string;
+    /** More specific type than {@link type} */
+    type2: string;
+    name: string;
+    code: string;
+    /** Contains current running data that is safe for application to handle but not modify. */
+    state: Record<string, any>;
     running: boolean;
     constructor(resolverDB: ResolverDB<T>, httpServer: Express);
     abstract init(): void;

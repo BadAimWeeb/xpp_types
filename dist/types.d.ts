@@ -12,5 +12,7 @@ export type EventTable = {
 export declare enum ErrorCode {
     NOT_IMPLEMENTED = "XPP#-1",
     UNKNOWN_ERROR = "XPP#0",
-    INVALID_CREDENTIALS = "XPP#1"
+    INVALID_CREDENTIALS = "XPP#1",
+    INSUFFICIENT_PERMISSION = "XPP#2",
+    NOT_FOUND = "XPP#3"
 }
