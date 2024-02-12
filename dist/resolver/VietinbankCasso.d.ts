@@ -19,6 +19,8 @@ export default class VietinbankCasso extends Base<{
         message: string;
         timeout: number;
         qr: string;
+        bank: string;
+        vqrDeeplink: string;
         localID: string;
     };
     knownTransactions: Set<string>;

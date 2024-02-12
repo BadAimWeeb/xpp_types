@@ -27,6 +27,8 @@ export default class TimoIMAP extends Base<{
         amount: number;
         message: string;
         timeout: number;
+        bank: string;
+        vqrDeeplink: string;
         qr: string;
     };
     knownTransactions: Set<string>;
