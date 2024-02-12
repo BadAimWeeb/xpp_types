@@ -21,6 +21,7 @@ export default class TSRWallet extends Base<{
         amount: number;
         message: string;
         timeout: number;
+        localID: string;
     };
     knownTransactions: Set<string>;
     readonly defaultDBValue: {

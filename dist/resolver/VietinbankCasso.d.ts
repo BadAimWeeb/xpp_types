@@ -19,6 +19,7 @@ export default class VietinbankCasso extends Base<{
         message: string;
         timeout: number;
         qr: string;
+        localID: string;
     };
     knownTransactions: Set<string>;
     readonly defaultDBValue: {
