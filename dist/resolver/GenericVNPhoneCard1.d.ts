@@ -10,7 +10,7 @@ type CallbackData = {
     serial: string;
     telco: string;
     trans_id: number;
-    callback_sign: string;
+    callback_sign?: string;
 };
 /**
  * Generic resolver for 5740908:TVYJ5Ggr-compatible API set, used by TheSieuRe and Gachthe1s.
