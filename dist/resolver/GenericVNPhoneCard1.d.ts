@@ -42,7 +42,6 @@ export default class GenericVNPhoneCard1 extends Base<{
     };
     checking: boolean;
     init(): Promise<void>;
-    resolveHTTP(req: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["0"], res: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["1"]): void;
     generateMessage(appShort: string, appPaymentID: string, localID: string): Promise<string>;
     charge(message: string, telecom: string, value: number, code: string, serial: string): Promise<{
         id: string;

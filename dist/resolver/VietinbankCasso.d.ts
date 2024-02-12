@@ -29,6 +29,5 @@ export default class VietinbankCasso extends Base<{
         timeout: number;
     };
     init(): Promise<void>;
-    resolveHTTP(req: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["0"], res: Parameters<Parameters<typeof this["httpServer"]["use"]>["1"]>["1"]): void;
     close(): void;
 }
