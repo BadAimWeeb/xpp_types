@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@badaimweeb/js-dtsocket": "^0.7.1",
-    "@badaimweeb/js-protov2d": "^1.0.11",
+    "@badaimweeb/js-protov2d": "^1.0.12",
     "cheerio": "^1.0.0-rc.12",
     "crc": "^4.3.2",
     "dotenv": "^16.4.1",
