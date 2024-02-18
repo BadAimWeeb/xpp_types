@@ -14,5 +14,6 @@ export declare enum ErrorCode {
     UNKNOWN_ERROR = "XPP#0",
     INVALID_CREDENTIALS = "XPP#1",
     INSUFFICIENT_PERMISSION = "XPP#2",
-    NOT_FOUND = "XPP#3"
+    NOT_FOUND = "XPP#3",
+    INVALID_STATE = "XPP#4"
 }
