@@ -20,6 +20,7 @@ export default class GenericVNPhoneCard1 extends Base<{
     listenPath?: string;
     partnerID: string;
     partnerKey: string;
+    filterTelco?: string[];
 }, {
     chargeFailedMessage: (requestID: string, data: CallbackData) => void;
 }, {
