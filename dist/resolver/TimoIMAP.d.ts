@@ -8,6 +8,7 @@ export default class TimoIMAP extends Base<{
     imapPort: number;
     imapSecure: boolean;
     imapUsername: string;
+    dkimSelfVerify: boolean;
 } & ({
     imapPassword: string;
 } | {
@@ -41,12 +42,13 @@ export default class TimoIMAP extends Base<{
         imapPassword: string;
         manualCheck: number;
         timeout: number;
+        dkimSelfVerify: boolean;
     };
     _lock: ImapFlow.MailboxLockObject | null;
     client: ImapFlow.ImapFlow | null;
     checking: boolean;
     failedCount: number;
     init(): Promise<void>;
-    _processMessage(message: ImapFlow.FetchMessageObject): Promise<void>;
+    _processMessage(message: ImapFlow.FetchMessageObject, dkimCheck: boolean): Promise<void>;
     close(): void;
 }

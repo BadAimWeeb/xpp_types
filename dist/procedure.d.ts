@@ -12,16 +12,26 @@ export declare const p: {
     }) => {
         resolve: <TOut>(oCallback: (gState: GlobalState, lState: Partial<LocalState>, input: TIn, socket: DTSocketServer_CSocket<ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
             req: IncomingMessage;
-        }>>, Session<WebSocket & {
-            req: IncomingMessage;
-        }>>) => TOut | PromiseLike<TOut>) => import("@badaimweeb/js-dtsocket").Procedure<TIn, TOut, ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
+        }>>, {
+            cs: {} & {
+                "internal:drop": [];
+            };
+            sc: {
+                payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+            };
+        }>) => TOut | PromiseLike<TOut>) => import("@badaimweeb/js-dtsocket").Procedure<TIn, TOut, ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
             req: IncomingMessage;
         }>>>;
         streamResolve: <TOut_1>(oCallback: (gState: GlobalState, lState: Partial<LocalState>, input: TIn, socket: DTSocketServer_CSocket<ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
             req: IncomingMessage;
-        }>>, Session<WebSocket & {
-            req: IncomingMessage;
-        }>>) => AsyncIterable<TOut_1>, burst?: boolean | undefined) => import("@badaimweeb/js-dtsocket/dist/procedures.js").StreamingProcedure<TIn, TOut_1, ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
+        }>>, {
+            cs: {} & {
+                "internal:drop": [];
+            };
+            sc: {
+                payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+            };
+        }>) => AsyncIterable<TOut_1>, burst?: boolean | undefined) => import("@badaimweeb/js-dtsocket/dist/procedures.js").StreamingProcedure<TIn, TOut_1, ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
             req: IncomingMessage;
         }>>>;
     };
