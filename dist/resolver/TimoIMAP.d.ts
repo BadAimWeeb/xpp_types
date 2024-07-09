@@ -14,7 +14,6 @@ export default class TimoIMAP extends Base<{
 } | {
     imapOauth2: string;
 }), {}, {}> {
-    #private;
     type: string;
     type1: string;
     type2: string;
@@ -46,6 +45,7 @@ export default class TimoIMAP extends Base<{
     };
     _lock: ImapFlow.MailboxLockObject | null;
     client: ImapFlow.ImapFlow | null;
+    _clock: ReturnType<typeof setInterval> | null;
     checking: boolean;
     failedCount: number;
     init(): Promise<void>;
