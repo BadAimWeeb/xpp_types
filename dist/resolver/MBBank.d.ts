@@ -2,9 +2,13 @@ import Base from "./Base.js";
 export default class MBBankCasso extends Base<{
     account: string;
     timeout: number;
-    secretKey: string;
-    listenPath?: string;
+    username: string;
+    password: string;
+    clockTime: number;
+    deviceID?: string;
+    sessionID?: string;
 }, {}, {}> {
+    #private;
     type: string;
     type1: string;
     type2: string;
@@ -26,10 +30,17 @@ export default class MBBankCasso extends Base<{
     knownTransactions: Set<string>;
     readonly defaultDBValue: {
         account: string;
-        secretKey: string;
-        listenPath: string;
         timeout: number;
+        username: string;
+        password: string;
+        clockTime: number;
     };
+    checking: boolean;
     init(): Promise<void>;
+    private _clLock;
+    private _checkLogin;
+    getAccountName(bin: string, account: string): Promise<string>;
+    check(): Promise<void>;
+    private _generateSessionID;
     close(): void;
 }

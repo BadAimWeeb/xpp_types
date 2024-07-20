@@ -14,7 +14,7 @@ export default abstract class Base<T, C, M> extends Base_base<C, M> {
     /** More specific type than {@link type1} */
     type2: string;
     name: string;
-    code: string;
+    codename: string;
     /** Contains current running data that is safe for application to handle but not modify. */
     state: Record<string, any>;
     running: boolean;
