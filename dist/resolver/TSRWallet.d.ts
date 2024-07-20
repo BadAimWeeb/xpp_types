@@ -31,7 +31,9 @@ export default class TSRWallet extends Base<{
     };
     checking: boolean;
     failedCount: number;
+    csrf: string | null;
     init(): Promise<void>;
+    getAccountName(identifier: string, retry?: boolean): Promise<string>;
     check(): Promise<void>;
     close(): void;
 }
