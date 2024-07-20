@@ -1,5 +1,3 @@
-/// <reference types="ws" />
-/// <reference types="node" />
 declare const func: import("@badaimweeb/js-dtsocket").Procedure<{
     resolver: string;
 }, {

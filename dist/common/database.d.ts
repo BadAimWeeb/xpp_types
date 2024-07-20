@@ -21,7 +21,7 @@ export declare const DBPayments: Collection<{
     resolverType: string;
     amount: number;
     status: "pending" | "success" | "failed";
-    reason?: string | undefined;
+    reason?: string;
     input: any;
     instruction: any;
     output: any;

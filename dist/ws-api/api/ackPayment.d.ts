@@ -1,5 +1,3 @@
-/// <reference types="ws" />
-/// <reference types="node" />
 declare const func: import("@badaimweeb/js-dtsocket").Procedure<{
     localID: string;
 } | {
@@ -12,8 +10,8 @@ declare const func: import("@badaimweeb/js-dtsocket").Procedure<{
     resolverID: string;
     resolverType: string;
     amount: number;
-    status: "success" | "failed" | "pending";
-    reason?: string | undefined;
+    status: "pending" | "success" | "failed";
+    reason?: string;
     input: any;
     instruction: any;
     output: any;
