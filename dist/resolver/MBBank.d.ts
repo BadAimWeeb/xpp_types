@@ -1,5 +1,5 @@
 import Base from "./Base.js";
-export default class MBBankCasso extends Base<{
+export default class MBBank extends Base<{
     account: string;
     timeout: number;
     username: string;
