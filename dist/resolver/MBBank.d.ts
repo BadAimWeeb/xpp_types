@@ -40,6 +40,7 @@ export default class MBBank extends Base<{
     private _clLock;
     private _checkLogin;
     getAccountName(bin: string, account: string): Promise<string>;
+    isChecking: boolean;
     check(): Promise<void>;
     private _generateSessionID;
     close(): void;
