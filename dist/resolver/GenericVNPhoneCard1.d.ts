@@ -41,6 +41,7 @@ export default class GenericVNPhoneCard1 extends Base<{
         partnerID: string;
         partnerKey: string;
     };
+    running: boolean;
     checking: boolean;
     init(): Promise<void>;
     generateMessage(appShort: string, appPaymentID: string, localID: string): Promise<string>;
