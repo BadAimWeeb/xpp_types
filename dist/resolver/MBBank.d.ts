@@ -39,6 +39,7 @@ export default class MBBank extends Base<{
     init(): Promise<void>;
     private _clLock;
     private _checkLogin;
+    _cacheAccountName: Record<string, string>;
     getAccountName(bin: string, account: string, retry?: boolean): Promise<string>;
     isChecking: boolean;
     check(): Promise<void>;
