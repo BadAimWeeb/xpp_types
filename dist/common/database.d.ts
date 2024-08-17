@@ -30,3 +30,17 @@ export declare const DBPayments: Collection<{
     updatedAt: number;
     expiresAt: number;
 }>;
+/** XPP-initialized payments that does not have appPaymentID yet. */
+export declare const DBXPPInitPayments: Collection<{
+    localID: string;
+    appUUID: string;
+    fullMessage: string;
+    resolverID: string;
+    resolverType: string;
+    amount: number;
+    input: any;
+    instruction: any;
+    output: any;
+    createdAt: number;
+    updatedAt: number;
+}>;

@@ -1,4 +1,5 @@
 import "dotenv/config";
+import "./preboot.js";
 import "./scripts/databaseMigration.js";
 import "./scripts/autoupdate.js";
 import { type Session } from "@badaimweeb/js-protov2d";

@@ -23,6 +23,7 @@
   "dependencies": {
     "@badaimweeb/js-dtsocket": "^0.8.1",
     "@badaimweeb/js-protov2d": "^1.0.14",
+    "@bilthon/electrum-client-ts": "0.1.30",
     "cheerio": "^1.0.0-rc.12",
     "crc": "^4.3.2",
     "dkim": "^0.8.0",
