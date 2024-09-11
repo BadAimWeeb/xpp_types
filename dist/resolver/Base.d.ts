@@ -46,5 +46,9 @@ export type BaseTransaction = {
      * Transaction message.
      */
     message: string;
+    /**
+     * Which resolver the transaction is from.
+     */
+    resolver: string;
 };
 export {};

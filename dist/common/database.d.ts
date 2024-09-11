@@ -50,3 +50,13 @@ export declare const DBXPPInitPayments: Collection<{
     createdAt: number;
     updatedAt: number;
 }>;
+export declare const mapDBResolverCollection: Map<string, Collection<any>>;
+export declare const generateDBResolverCollection_Litecoin: (uuid: string) => Promise<Collection<{
+    ownedBy: string;
+    privateKey: string;
+    address: string;
+    type: "p2pkh";
+    lastChecked: number;
+    lastCheckedBalance: number;
+    lastCheckedUnspent: [txid: string, n: number, script?: string][];
+}>>;
