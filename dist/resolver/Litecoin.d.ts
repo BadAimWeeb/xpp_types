@@ -1,5 +1,5 @@
-import Base from "./Base.js";
-export default class TSRWallet extends Base<{}, {}, {}> {
+import ResolverBase from "./Base.js";
+export default class Litecoin extends ResolverBase<{}, {}, {}> {
     type: string;
     type1: string;
     type2: string;

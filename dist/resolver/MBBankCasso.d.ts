@@ -1,5 +1,5 @@
-import Base from "./Base.js";
-export default class MBBankCasso extends Base<{
+import ResolverBase from "./Base.js";
+export default class MBBankCasso extends ResolverBase<{
     account: string;
     timeout: number;
     secretKey: string;

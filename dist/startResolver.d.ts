@@ -1,9 +1,11 @@
 import { Express } from 'express';
-import type Base from './resolver/Base.js';
+import type ResolverBase from './resolver/Base.js';
 import type TypedEmitter from 'typed-emitter';
-export declare const resolverMapper: Map<string, Base<any, any, any>>;
+import CaptchaResolverBase from './captcha/Base.js';
+export declare const captchaResolverMapper: Map<string, CaptchaResolverBase<any, {}>>;
+export declare const resolverMapper: Map<string, ResolverBase<any, any, any>>;
 export declare const newResolverEvent: TypedEmitter<{
-    newResolver: (resolver: Base<any, any, any>) => void;
-    closeResolver: (resolver: Base<any, any, any>) => void;
+    newResolver: (resolver: ResolverBase<any, any, any>) => void;
+    closeResolver: (resolver: ResolverBase<any, any, any>) => void;
 }>;
 export default function (httpServer: Express): Promise<void>;

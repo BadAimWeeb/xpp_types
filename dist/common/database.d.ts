@@ -12,6 +12,12 @@ export declare const DBResolverData: Collection<{
     disabled: boolean;
     type: string;
 }>;
+export declare const DBCaptchaResolverData: Collection<{
+    uuid: string;
+    data: any;
+    disabled: boolean;
+    type: string;
+}>;
 export declare const DBPayments: Collection<{
     localID: string;
     appUUID: string;

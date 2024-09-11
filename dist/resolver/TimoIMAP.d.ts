@@ -1,6 +1,6 @@
-import Base from "./Base.js";
+import ResolverBase from "./Base.js";
 import ImapFlow from "imapflow";
-export default class TimoIMAP extends Base<{
+export default class TimoIMAP extends ResolverBase<{
     account: string;
     timeout: number;
     manualCheck: number;

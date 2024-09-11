@@ -1,6 +1,9 @@
-import Base from "./Base.js";
-export default class TSRWallet extends Base<{
-    cookie: string;
+import ResolverBase from "./Base.js";
+export default class TSRWallet extends ResolverBase<{
+    cookie?: string;
+    loginAccount?: string;
+    loginPassword?: string;
+    captchaResolvers?: string | string[];
     clockTime: number;
     timeout: number;
 }, {}, {
@@ -33,6 +36,7 @@ export default class TSRWallet extends Base<{
     failedCount: number;
     csrf: string | null;
     init(): Promise<void>;
+    private login;
     getAccountName(identifier: string, retry?: boolean): Promise<string>;
     check(): Promise<void>;
     close(): void;

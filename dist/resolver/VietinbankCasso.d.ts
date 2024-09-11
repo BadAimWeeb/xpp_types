@@ -1,5 +1,5 @@
-import Base from "./Base.js";
-export default class VietinbankCasso extends Base<{
+import ResolverBase from "./Base.js";
+export default class VietinbankCasso extends ResolverBase<{
     account: string;
     timeout: number;
     secretKey: string;

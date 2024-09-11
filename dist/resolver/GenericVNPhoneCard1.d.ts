@@ -1,4 +1,4 @@
-import Base from "./Base.js";
+import ResolverBase from "./Base.js";
 type CallbackData = {
     status: number;
     message: string;
@@ -15,7 +15,7 @@ type CallbackData = {
 /**
  * Generic resolver for 5740908:TVYJ5Ggr-compatible API set, used by TheSieuRe and Gachthe1s.
  */
-export default class GenericVNPhoneCard1 extends Base<{
+export default class GenericVNPhoneCard1 extends ResolverBase<{
     target: string;
     listenPath?: string;
     partnerID: string;
