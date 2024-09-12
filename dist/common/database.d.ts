@@ -54,9 +54,11 @@ export declare const mapDBResolverCollection: Map<string, Collection<any>>;
 export declare const generateDBResolverCollection_Litecoin: (uuid: string) => Promise<Collection<{
     ownedBy: string;
     privateKey: string;
+    scriptHash: string;
     address: string;
-    type: "p2pkh";
     lastChecked: number;
     lastCheckedBalance: number;
-    lastCheckedUnspent: [txid: string, n: number, script?: string][];
+    lastCheckedUnspent: [txid: string, n: number, blockNo?: number][];
+} & {
+    type: "p2pkh";
 }>>;
