@@ -6,10 +6,12 @@ export default class NopeCHA extends CaptchaResolverBase<{
     static flags: {
         Text: boolean;
         ManualImage: boolean;
+        ReCaptchaV2: boolean;
     };
     private api?;
-    resolveCaptchaText(image: Buffer | Uint8Array | string): Promise<string>;
+    resolveCaptchaText(question: string): Promise<string>;
     init(): Promise<void>;
     close(): void;
-    resolveCaptchaManualImage(image: Buffer | Uint8Array | string): Promise<string>;
+    resolveCaptchaNormalImage(image: Buffer | Uint8Array | string): Promise<string>;
+    resolveCaptchaReCaptchaV2(siteKey: string, pageUrl: string): Promise<string>;
 }
