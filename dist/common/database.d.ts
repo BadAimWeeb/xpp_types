@@ -26,6 +26,7 @@ export declare const DBPayments: Collection<{
     resolverID: string;
     resolverType: string;
     amount: number;
+    currency: string;
     status: "pending" | "success" | "failed";
     reason?: string;
     input: any;
@@ -36,7 +37,13 @@ export declare const DBPayments: Collection<{
     updatedAt: number;
     expiresAt: number;
 }>;
-/** XPP-initialized payments that does not have appPaymentID yet. */
+/**
+ * XPP-initialized payments that does not have appPaymentID yet.
+ * If appPaymentID is supplied afterwards, it must be converted to normal payment.
+ * (essentially, this is a temporary storage for XPP-initiated payments)
+ *
+ * All payments here are considered "success", unless app reject them, in that case we delete.
+ */
 export declare const DBXPPInitPayments: Collection<{
     localID: string;
     appUUID: string;
@@ -44,8 +51,10 @@ export declare const DBXPPInitPayments: Collection<{
     resolverID: string;
     resolverType: string;
     amount: number;
-    input: any;
-    instruction: any;
+    currency: string;
+    input: {
+        account: string;
+    };
     output: any;
     createdAt: number;
     updatedAt: number;
@@ -57,8 +66,18 @@ export declare const generateDBResolverCollection_Litecoin: (uuid: string) => Pr
     scriptHash: string;
     address: string;
     lastChecked: number;
+    /** Balance is always in "sat" */
     lastCheckedBalance: number;
-    lastCheckedUnspent: [txid: string, n: number, blockNo?: number][];
+    lastCheckedUnspent: {
+        /** TXID on blockchain */
+        t: string;
+        /** Vout index */
+        n: number;
+        /** Value of output, in "sat" */
+        v: number;
+        /** Block height */
+        bn?: number;
+    }[];
 } & {
     type: "p2pkh";
 }>>;

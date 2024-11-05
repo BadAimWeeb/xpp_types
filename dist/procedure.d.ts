@@ -17,6 +17,7 @@ export declare const p: {
             };
             sc: {
                 payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+                xppInitPayment: [xppID: string, output: any];
             };
         }>) => TOut | PromiseLike<TOut>) => import("@badaimweeb/js-dtsocket").Procedure<TIn, TOut, ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
             req: IncomingMessage;
@@ -29,6 +30,7 @@ export declare const p: {
             };
             sc: {
                 payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+                xppInitPayment: [xppID: string, output: any];
             };
         }>) => AsyncIterable<TOut>, burst?: boolean) => import("@badaimweeb/js-dtsocket/dist/procedures.js").StreamingProcedure<TIn, TOut, ServerContext<GlobalState, LocalState, EventTable, Session<WebSocket & {
             req: IncomingMessage;

@@ -7,6 +7,7 @@ export type EventTable = {
     csEvents: {};
     scEvents: {
         payment: (appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string) => void;
+        xppInitPayment: (xppID: string, output: any) => void;
     };
 };
 export declare enum ErrorCode {

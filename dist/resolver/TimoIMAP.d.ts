@@ -30,6 +30,7 @@ export default class TimoIMAP extends ResolverBase<{
         bank: string;
         vqrDeeplink: string;
         qr: string;
+        currency: string;
     };
     knownTransactions: Set<string>;
     readonly defaultDBValue: {

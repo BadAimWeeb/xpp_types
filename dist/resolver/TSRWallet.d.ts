@@ -25,6 +25,7 @@ export default class TSRWallet extends ResolverBase<{
         message: string;
         timeout: number;
         localID: string;
+        currency: string;
     };
     knownTransactions: Set<string>;
     readonly defaultDBValue: {

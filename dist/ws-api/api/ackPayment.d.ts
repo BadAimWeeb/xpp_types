@@ -10,6 +10,7 @@ declare const func: import("@badaimweeb/js-dtsocket").Procedure<{
     resolverID: string;
     resolverType: string;
     amount: number;
+    currency: string;
     status: "pending" | "success" | "failed";
     reason?: string;
     input: any;

@@ -5,6 +5,7 @@ import CaptchaResolverBase from "../captcha/Base.js";
 declare const ResolverBase_base: new <T_1, M_1>() => TypedEmitter<{
     transaction: (transaction: BaseTransaction & M_1) => void;
     rawTransaction: (transaction: BaseTransaction & M_1) => void;
+    informationalTransaction: (transaction: BaseTransaction & M_1) => void;
 } & T_1>;
 export default abstract class ResolverBase<T, C, M> extends ResolverBase_base<C, M> {
     resolverDB: ResolverDB<T>;

@@ -1,6 +1,6 @@
 import type { ServerContext } from "@badaimweeb/js-dtsocket";
 import type { Session } from "@badaimweeb/js-protov2d";
-import type { GlobalState, LocalState, EventTable } from "../types.js";
+import { type GlobalState, type LocalState, type EventTable } from "../types.js";
 import type ResolverBase from "../resolver/Base.js";
 import { DTSocketServerInterface } from "@badaimweeb/js-dtsocket/dist/server.js";
 export declare function initProcessor(dtServer: DTSocketServerInterface<ServerContext<GlobalState, LocalState, EventTable, Session>>): void;
@@ -15,6 +15,7 @@ export default class Processor {
         message: string;
         timeout: number;
         localID: string;
+        currency: string;
     }>;
     createVNPhoneCardTransaction(appID: string, appPaymentID: string, resolverID: string, phoneCardData: {
         telco: string;
@@ -51,4 +52,6 @@ export default class Processor {
         actualAmount?: undefined;
         output?: undefined;
     }>;
+    createXPPInitAccount(appID: string, resolverID: string, options?: any): Promise<any>;
+    ackXPPInitPayment(appID: string, localID: string, appPaymentID?: string): Promise<void>;
 }

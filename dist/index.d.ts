@@ -14,6 +14,7 @@ declare const apiServer: import("@badaimweeb/js-dtsocket/dist/server.js").DTSock
             };
             sc: {
                 payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+                xppInitPayment: [xppID: string, output: any];
             };
         }>];
         "internal:remove-session": [import("@badaimweeb/js-dtsocket/dist/server_csocket.js").DTSocketServer_CSocket<ServerContext<GlobalState, LocalState, EventTable, Session<any>, typeof WSAPI>, {
@@ -22,11 +23,13 @@ declare const apiServer: import("@badaimweeb/js-dtsocket/dist/server.js").DTSock
             };
             sc: {
                 payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+                xppInitPayment: [xppID: string, output: any];
             };
         }>];
     };
     sc: {
         payment: [appID: string, xppID: string, status: "success" | "failed", output: any, reason?: string | undefined];
+        xppInitPayment: [xppID: string, output: any];
     };
 }>;
 export type Server = typeof apiServer;

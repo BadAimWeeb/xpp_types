@@ -26,6 +26,7 @@ export default class MBBank extends ResolverBase<{
         bank: string;
         vqrDeeplink: string;
         localID: string;
+        currency: string;
     };
     knownTransactions: Set<string>;
     readonly defaultDBValue: {
