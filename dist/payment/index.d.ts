@@ -52,6 +52,6 @@ export default class Processor {
         actualAmount?: undefined;
         output?: undefined;
     }>;
-    createXPPInitAccount(appID: string, resolverID: string, options?: any): Promise<any>;
+    createXPPInitAccount(appID: string, resolverID: string, options?: any): Promise<string>;
     ackXPPInitPayment(appID: string, localID: string, appPaymentID?: string): Promise<void>;
 }

@@ -1,10 +1,12 @@
 import ackPayment from "./api/ackPayment.js";
+import ackXPPInitPayment from "./api/ackXPPInitPayment.js";
 import cancelPayment from "./api/cancelPayment.js";
 import createPaymentBank from "./api/createPaymentBank.js";
 import createPaymentVNPhoneCard from "./api/createPaymentVNPhoneCard.js";
+import createXPPInitTXAccount from "./api/createXPPInitTXAccount.js";
 import getResolvers from "./api/getResolvers.js";
 import getTSRAccountName from "./api/getTSRAccountName.js";
 import getVNBankAccountName from "./api/getVNBankAccountName.js";
 import getVNPhoneCardFee from "./api/getVNPhoneCardFee.js";
 import inputKey from "./api/inputKey.js";
-export { ackPayment, cancelPayment, createPaymentBank, createPaymentVNPhoneCard, getResolvers, getTSRAccountName, getVNBankAccountName, getVNPhoneCardFee, inputKey };
+export { ackPayment, ackXPPInitPayment, cancelPayment, createPaymentBank, createPaymentVNPhoneCard, createXPPInitTXAccount, getResolvers, getTSRAccountName, getVNBankAccountName, getVNPhoneCardFee, inputKey };
