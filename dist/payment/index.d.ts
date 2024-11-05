@@ -16,6 +16,8 @@ export default class Processor {
         timeout: number;
         localID: string;
         currency: string;
+        account: string;
+        amount: number;
     }>;
     createVNPhoneCardTransaction(appID: string, appPaymentID: string, resolverID: string, phoneCardData: {
         telco: string;
