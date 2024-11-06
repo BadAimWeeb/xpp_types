@@ -45,6 +45,7 @@ export default class Litecoin extends ResolverBase<{
     electrum?: ElectrumCluster;
     private _waitBroadcast;
     readonly defaultDBValue: {};
+    private _cacheBlockHashMap;
     private _lastBlockHeight;
     private _lastBlockHash;
     init(): Promise<void>;
