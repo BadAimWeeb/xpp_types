@@ -56,6 +56,32 @@ export default class Litecoin extends ResolverBase<{
     private _handleNotifications;
     private _handleTransaction;
     createNewAccount(ownedBy: string, _options?: {}): Promise<string>;
+    getBalanceBreakdown(ownedBy: string): Promise<{
+        account: string;
+        balance: number;
+        utxo: {
+            txid: string;
+            vout: number;
+            value: number;
+        }[];
+    }[]>;
+    sendTransaction(ownedBy: string, output: {
+        address: string;
+        amount: number;
+        subtractEnabled?: boolean;
+    }[], dumpTo: string, options?: {
+        input?: {
+            txid: string;
+            vout: number;
+        }[];
+        /**
+         * - "lowest" - use the lowest fee possible without impacting output amount.
+         * If the fee is too high and subtractEnabled is true, it will subtract the needed fee from the output amount.
+         *
+         * - number - use the specified fee in satoshi
+         */
+        fee?: "lowest" | number;
+    }): Promise<void>;
     getAccountOwner(address: string): Promise<string | undefined>;
     close(): Promise<void>;
 }
