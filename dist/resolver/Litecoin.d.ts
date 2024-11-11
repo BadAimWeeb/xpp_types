@@ -29,6 +29,10 @@ export default class Litecoin extends ResolverBase<{
     confirmationThreshold?: number;
     /** Used for vanity. */
     preMadeWIF?: string[];
+    lastBlock?: {
+        height: number;
+        hash: string;
+    };
 }, {}, {
     account: string;
     ownedBy: string;
@@ -81,7 +85,15 @@ export default class Litecoin extends ResolverBase<{
          * - number - use the specified fee in satoshi
          */
         fee?: "lowest" | number;
-    }): Promise<void>;
+    }): Promise<{
+        txid: string;
+        fee: number;
+        output: {
+            address: string;
+            amount: number;
+        }[];
+    }>;
     getAccountOwner(address: string): Promise<string | undefined>;
     close(): Promise<void>;
+    private static scriptToScriptHash;
 }

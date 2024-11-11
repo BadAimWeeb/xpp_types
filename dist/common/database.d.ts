@@ -63,7 +63,7 @@ export declare const mapDBResolverCollection: Map<string, Collection<any>>;
 export declare const generateDBResolverCollection_Litecoin: (uuid: string) => Promise<Collection<{
     ownedBy: string;
     privateKey: string;
-    scriptHash: string;
+    script: string;
     address: string;
     lastChecked: number;
     /** Balance is always in "sat" */
