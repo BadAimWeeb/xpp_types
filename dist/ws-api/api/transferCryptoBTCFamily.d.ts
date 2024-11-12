@@ -3,7 +3,7 @@ declare const func: import("@badaimweeb/js-dtsocket").Procedure<{
         address: string;
         amount: number;
         subtractEnabled?: boolean | null | undefined;
-    };
+    }[];
     resolver: string;
     dumpTo: string;
     options?: {
