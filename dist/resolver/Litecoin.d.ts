@@ -40,6 +40,7 @@ export default class Litecoin extends ResolverBase<{
     type: string;
     type1: string;
     type2: string;
+    subtype: string[];
     name: string;
     codename: string;
     state: {

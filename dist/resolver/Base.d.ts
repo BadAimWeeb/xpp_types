@@ -18,6 +18,7 @@ export default abstract class ResolverBase<T, C, M> extends ResolverBase_base<C,
     type2: string;
     name: string;
     codename: string;
+    subtype: string[];
     /** Contains current running data that is safe for application to handle but not modify. */
     state: Record<string, any>;
     running: boolean;
