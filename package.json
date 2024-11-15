@@ -52,5 +52,8 @@
   "type": "module",
   "trustedDependencies": [
     "@bilthon/electrum-client-ts"
-  ]
+  ],
+  "patchedDependencies": {
+    "bitcoinjs-lib@7.0.0-rc.0": "patches/bitcoinjs-lib@7.0.0-rc.0.patch"
+  }
 }
