@@ -53,7 +53,6 @@ export default class Litecoin extends ResolverBase<{
     private _cacheBlockHashMap;
     private _lastBlockHeight;
     private _lastBlockHash;
-    private _firstRec;
     init(): Promise<void>;
     private _lockRequery;
     private _handleRequeryAccount;

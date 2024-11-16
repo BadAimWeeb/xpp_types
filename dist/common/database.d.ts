@@ -63,6 +63,7 @@ export declare const mapDBResolverCollection: Map<string, Collection<any>>;
 export declare const generateDBResolverCollection_Litecoin: (uuid: string) => Promise<Collection<{
     ownedBy: string;
     privateKey: string;
+    /** Output script, NOT redeem script. */
     script: string;
     address: string;
     lastChecked: number;
@@ -78,6 +79,10 @@ export declare const generateDBResolverCollection_Litecoin: (uuid: string) => Pr
         /** Block height */
         bn?: number;
     }[];
-} & {
+} & ({
     type: "p2pkh";
-}>>;
+} | {
+    type: "p2sh-p2wpkh";
+} | {
+    type: "p2wpkh";
+})>>;
