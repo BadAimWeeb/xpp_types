@@ -26,7 +26,9 @@
     "@badaimweeb/js-dtsocket": "^0.8.1",
     "@badaimweeb/js-protov2d": "^1.0.14",
     "@bilthon/electrum-client-ts": "0.1.30",
+    "binance": "^2.13.14",
     "bitcoinjs-lib": "^7.0.0-rc.0",
+    "bolt11": "^1.4.1",
     "cheerio": "^1.0.0",
     "crc": "^4.3.2",
     "dkim": "^0.8.0",
@@ -53,7 +55,8 @@
   },
   "type": "module",
   "trustedDependencies": [
-    "@bilthon/electrum-client-ts"
+    "@bilthon/electrum-client-ts",
+    "secp256k1"
   ],
   "patchedDependencies": {
     "bitcoinjs-lib@7.0.0-rc.0": "patches/bitcoinjs-lib@7.0.0-rc.0.patch"
