@@ -7,6 +7,7 @@ import { ServerContext } from '@badaimweeb/js-dtsocket';
 import * as http from 'http';
 import * as ws from 'ws';
 import * as mongodb from 'mongodb';
+import { DepositAddressResponse } from 'binance';
 
 type GlobalState = {};
 type LocalState = {
@@ -21,7 +22,7 @@ type EventTable = {
     };
 };
 
-declare const func$c: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$e: _badaimweeb_js_dtsocket.Procedure<{
     localID: string;
 } | {
     appPaymentID: string;
@@ -47,14 +48,14 @@ declare const func$c: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$b: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$d: _badaimweeb_js_dtsocket.Procedure<{
     localID: string;
     appPaymentID?: string | null | undefined;
 }, null, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$a: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$c: _badaimweeb_js_dtsocket.Procedure<{
     localID: string;
 } | {
     appPaymentID: string;
@@ -62,7 +63,21 @@ declare const func$a: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$9: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$b: _badaimweeb_js_dtsocket.Procedure<{
+    appPaymentID: string;
+    amount: number;
+    resolver: string;
+}, {
+    address: string;
+    amount: number;
+    timeout: number;
+    localID: string;
+    currency: string;
+}, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
+    req: http.IncomingMessage;
+}>>>;
+
+declare const func$a: _badaimweeb_js_dtsocket.Procedure<{
     appPaymentID: string;
     amount: number;
     resolver: string;
@@ -78,7 +93,7 @@ declare const func$9: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$8: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$9: _badaimweeb_js_dtsocket.Procedure<{
     appPaymentID: string;
     amount: number;
     code: string;
@@ -118,14 +133,14 @@ declare const func$8: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$7: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$8: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
     options?: any;
 }, string, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$6: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$7: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
 }, {
     account: string;
@@ -136,6 +151,14 @@ declare const func$6: _badaimweeb_js_dtsocket.Procedure<{
         value: number;
     }[];
 }[], _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
+    req: http.IncomingMessage;
+}>>>;
+
+declare const func$6: _badaimweeb_js_dtsocket.Procedure<{
+    resolver: string;
+    coin: string;
+    network?: string | null | undefined;
+}, DepositAddressResponse, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
@@ -214,7 +237,7 @@ declare const func: _badaimweeb_js_dtsocket.Procedure<{
 }>>>;
 
 declare namespace WSAPI {
-  export { func$c as ackPayment, func$b as ackXPPInitPayment, func$a as cancelPayment, func$9 as createPaymentBank, func$8 as createPaymentVNPhoneCard, func$7 as createXPPInitTXAccount, func$6 as getBalanceCryptoBTCFamily, func$5 as getResolvers, func$4 as getTSRAccountName, func$3 as getVNBankAccountName, func$2 as getVNPhoneCardFee, func$1 as inputKey, func as transferCryptoBTCFamily };
+  export { func$e as ackPayment, func$d as ackXPPInitPayment, func$c as cancelPayment, func$b as createBinanceBitcoinLightningInvoice, func$a as createPaymentBank, func$9 as createPaymentVNPhoneCard, func$8 as createXPPInitTXAccount, func$7 as getBalanceCryptoBTCFamily, func$6 as getBinanceDepositAddress, func$5 as getResolvers, func$4 as getTSRAccountName, func$3 as getVNBankAccountName, func$2 as getVNPhoneCardFee, func$1 as inputKey, func as transferCryptoBTCFamily };
 }
 
 declare const apiServer: _badaimweeb_js_dtsocket_dist_server_js.DTSocketServerInterface<ServerContext<GlobalState, LocalState, EventTable, Session<any>, typeof WSAPI>, {
