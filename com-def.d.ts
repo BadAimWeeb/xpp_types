@@ -7,6 +7,7 @@ import { ServerContext } from '@badaimweeb/js-dtsocket';
 import * as http from 'http';
 import * as ws from 'ws';
 import * as mongodb from 'mongodb';
+import * as binance from 'binance';
 import { DepositAddressResponse } from 'binance';
 
 type GlobalState = {};
@@ -22,7 +23,7 @@ type EventTable = {
     };
 };
 
-declare const func$e: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$h: _badaimweeb_js_dtsocket.Procedure<{
     localID: string;
 } | {
     appPaymentID: string;
@@ -48,14 +49,14 @@ declare const func$e: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$d: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$g: _badaimweeb_js_dtsocket.Procedure<{
     localID: string;
     appPaymentID?: string | null | undefined;
 }, null, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$c: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$f: _badaimweeb_js_dtsocket.Procedure<{
     localID: string;
 } | {
     appPaymentID: string;
@@ -63,7 +64,7 @@ declare const func$c: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$b: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$e: _badaimweeb_js_dtsocket.Procedure<{
     appPaymentID: string;
     amount: number;
     resolver: string;
@@ -77,7 +78,7 @@ declare const func$b: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$a: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$d: _badaimweeb_js_dtsocket.Procedure<{
     appPaymentID: string;
     amount: number;
     resolver: string;
@@ -93,7 +94,7 @@ declare const func$a: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$9: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$c: _badaimweeb_js_dtsocket.Procedure<{
     appPaymentID: string;
     amount: number;
     code: string;
@@ -133,14 +134,24 @@ declare const func$9: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$8: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$b: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
     options?: any;
 }, string, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$7: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$a: _badaimweeb_js_dtsocket.Procedure<{
+    type: "BUY" | "SELL";
+    resolver: string;
+    marketPair: string;
+    quantity: number;
+    price: number;
+}, binance.OrderResponseFull, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
+    req: http.IncomingMessage;
+}>>>;
+
+declare const func$9: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
 }, {
     account: string;
@@ -154,7 +165,7 @@ declare const func$7: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$6: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$8: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
     coin: string;
     network?: string | null | undefined;
@@ -162,7 +173,14 @@ declare const func$6: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$5: _badaimweeb_js_dtsocket.Procedure<void, {
+declare const func$7: _badaimweeb_js_dtsocket.Procedure<{
+    resolver: string;
+    marketPair: string;
+}, binance.OrderBookResponse, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
+    req: http.IncomingMessage;
+}>>>;
+
+declare const func$6: _badaimweeb_js_dtsocket.Procedure<void, {
     uuid: string;
     type0: string;
     type1: string;
@@ -175,14 +193,14 @@ declare const func$5: _badaimweeb_js_dtsocket.Procedure<void, {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$4: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$5: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
     identifier: string;
 }, string, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$3: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$4: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
     account: string;
     bin: string;
@@ -190,7 +208,7 @@ declare const func$3: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$2: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$3: _badaimweeb_js_dtsocket.Procedure<{
     resolver: string;
 }, {
     [telco: string]: {
@@ -203,14 +221,14 @@ declare const func$2: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
-declare const func$1: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$2: _badaimweeb_js_dtsocket.Procedure<{
     uuid: string;
     secret: string;
 }, void, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
     req: http.IncomingMessage;
 }>>>;
 
-declare const func: _badaimweeb_js_dtsocket.Procedure<{
+declare const func$1: _badaimweeb_js_dtsocket.Procedure<{
     output: {
         address: string;
         amount: number;
@@ -236,8 +254,46 @@ declare const func: _badaimweeb_js_dtsocket.Procedure<{
     req: http.IncomingMessage;
 }>>>;
 
+type BaseTransaction = {
+    /**
+     * The ID of the transaction, or notification. Should be unique.
+     */
+    id: string;
+    /**
+     * Amount of money involved in the transaction.
+     */
+    amount: number;
+    /**
+     * The currency of the transaction.
+     */
+    currency: string;
+    /**
+     * The date of the transaction.
+     */
+    date: Date;
+    /**
+     * Transaction message.
+     */
+    message: string;
+    /**
+     * Which resolver the transaction is from.
+     */
+    resolver: string;
+};
+
+declare const func: _badaimweeb_js_dtsocket.Procedure<{
+    address: string;
+    resolver: string;
+    timeout?: number | null | undefined;
+}, BaseTransaction & {
+    address: string;
+    addressTag?: string;
+}, _badaimweeb_js_dtsocket.ServerContext<GlobalState, LocalState, EventTable, _badaimweeb_js_protov2d.Session<ws.WebSocket & {
+    req: http.IncomingMessage;
+}>>>;
+
 declare namespace WSAPI {
-  export { func$e as ackPayment, func$d as ackXPPInitPayment, func$c as cancelPayment, func$b as createBinanceBitcoinLightningInvoice, func$a as createPaymentBank, func$9 as createPaymentVNPhoneCard, func$8 as createXPPInitTXAccount, func$7 as getBalanceCryptoBTCFamily, func$6 as getBinanceDepositAddress, func$5 as getResolvers, func$4 as getTSRAccountName, func$3 as getVNBankAccountName, func$2 as getVNPhoneCardFee, func$1 as inputKey, func as transferCryptoBTCFamily };
+  export { func$h as ackPayment, func$g as ackXPPInitPayment, func$f as cancelPayment, func$e as createBinanceBitcoinLightningInvoice, func$d as createPaymentBank, func$c as createPaymentVNPhoneCard, func$b as createXPPInitTXAccount, func$a as executeBinanceTrade, func$9 as getBalanceCryptoBTCFamily, func$8 as getBinanceDepositAddress, func$7 as getBinanceMarketData, func$6 as getResolvers, func$5 as getTSRAccountName, func$4 as getVNBankAccountName, func$3 as getVNPhoneCardFee, func$2 as inputKey, func$1 as transferCryptoBTCFamily, func as waitBinanceDepositEvent };
 }
 
 declare const apiServer: _badaimweeb_js_dtsocket_dist_server_js.DTSocketServerInterface<ServerContext<GlobalState, LocalState, EventTable, Session<any>, typeof WSAPI>, {
